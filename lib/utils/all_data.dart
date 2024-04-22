@@ -116,8 +116,13 @@ class Global {
     TextEditingController(),
     TextEditingController(),
   ];
+  static List<TextEditingController> allhobbiesIntrest = [
+    TextEditingController(),
+    TextEditingController(),
+  ];
   static List<String> skills = [];
   static List<String> achievements = [];
+  static List<String> hobbiesIntrest = [];
 
   // contact page var...
   static String? name;
