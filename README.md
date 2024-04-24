@@ -5,6 +5,10 @@
 ## Getting Started
 
 
+https://github.com/shyamshiyani/resume_wizard/assets/149999914/1db0dfef-f434-4aa3-ae6c-73e09979a99a
+
+
+
 ![Screenshot_20240424_111856](https://github.com/shyamshiyani/resume_wizard/assets/149999914/b555432c-6d96-4cf6-9e96-59c1c74b890d)
 ![shya,](https://github.com/shyamshiyani/resume_wizard/assets/149999914/75d97048-afcd-49a6-b523-7a0be9fa62dc)
 ![Screenshot_20240424_111901](https://github.com/shyamshiyani/resume_wizard/assets/149999914/5373844a-39f4-44c7-945b-c04df653bc40)
