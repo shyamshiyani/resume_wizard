@@ -124,14 +124,48 @@ class Global {
   static List<String> achievements = [];
   static List<String> hobbiesIntrest = [];
 
+  static List allResumeData = [];
+  static String resumeData = '';
   // contact page var...
-  static String? name;
-  static String? email;
-  static String? number;
-  static String? address;
+  static String name = "";
+  static String email = "";
+  static String number = "";
+  static String address = "";
   // image
   static File? savefile;
   // carrier page var...
-  static String? carrier;
-  static String? designation;
+  static String carrier = "";
+  static String designation = "";
+  //Personal Details page var...
+  static String dob = "";
+  static String gender = "";
+  static List<String> language = [];
+  static String nationality = "";
+  //education page var...
+  static String course = "";
+  static String school = "";
+  static String percentage = "";
+  static String passingYear = "";
+  //experience page var...
+  static String companyName = "";
+  static String instituteName = "";
+  static String rolesOpt = "";
+  static String employed = "";
+  static String dateJoined = "";
+  static String dateExit = "";
+  // projects page var...
+  static String title = "";
+  static List<String> technologiesLan = [];
+  static String roles = "";
+  static String technologies = "";
+  static String projectDescription = "";
+  //references page var. . .
+  static String referenceName = "";
+  static String designationRef = "";
+  static String organization = "";
+  static String yearOfPassing = "";
+  //declaration page var...
+  static String description = "";
+  static String date = "";
+  static String place = "";
 }

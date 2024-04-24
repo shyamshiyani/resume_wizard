@@ -64,15 +64,16 @@ class _carrier_objectiveState extends State<carrier_objective> {
                           child: TextFormField(
                             keyboardType: TextInputType.text,
                             validator: (val) {
-                              if (val != null) {
+                              if (val!.isEmpty) {
                                 return "Enter the Carrier Objective";
                               }
-                              return "";
+                              return null;
                             },
                             onSaved: (val) {
-                              Global.carrier = val ?? "";
+                              Global.carrier = val!;
+                              print(Global.carrier);
                             },
-                            // controller: carrierController,
+                            controller: carrierController,
                             maxLines: 6,
                             decoration: InputDecoration(
                               hintText: "Description",
@@ -80,7 +81,7 @@ class _carrier_objectiveState extends State<carrier_objective> {
                               border: const OutlineInputBorder(),
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -109,12 +110,12 @@ class _carrier_objectiveState extends State<carrier_objective> {
                         Padding(
                           padding: const EdgeInsets.only(
                               top: 10, right: 20, left: 20),
-                          child: TextFormField(
+                          child: TextField(
                             keyboardType: TextInputType.text,
-                            onSaved: (val) {
+                            onChanged: (val) {
                               Global.designation = val ?? "";
                             },
-                            // controller: designationController,
+                            controller: designationController,
                             decoration: InputDecoration(
                               hintText: "Software Engineer",
                               hintStyle: TextStyle(
@@ -134,7 +135,9 @@ class _carrier_objectiveState extends State<carrier_objective> {
                     OutlinedButton(
                       onPressed: () {
                         if (carreierInfoKey.currentState!.validate()) {
-                          carreierInfoKey.currentState!.save();
+                          carreierInfoKey.currentState!.reset();
+                          carrierController.clear();
+                          designationController.clear();
                         }
                       },
                       style: OutlinedButton.styleFrom(

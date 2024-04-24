@@ -23,4 +23,22 @@ class style {
     fontWeight: FontWeight.bold,
     color: sage,
   );
+  static TextStyle pdfBig = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.bold,
+    color: pdf1,
+  );
+  static TextStyle pdfMedium = TextStyle(
+    fontSize: 14,
+    color: pdf3,
+  );
+  static TextStyle pdfSmall = TextStyle(
+    fontSize: 13,
+    fontWeight: FontWeight.bold,
+    color: pdf3,
+  );
+  static TextStyle pdfMidSmall = TextStyle(
+    fontSize: 13,
+    color: pdf4,
+  );
 }

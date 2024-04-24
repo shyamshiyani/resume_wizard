@@ -25,50 +25,52 @@ class _workspaceState extends State<workspace> {
         ),
       ),
       body: Center(
-        child: Column(
-          children: Global.alldata
-              .map(
-                (e) => GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).pushNamed(e.navigation);
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.only(left: 25, right: 15),
-                    decoration: const BoxDecoration(
-                      // color: sage,
-                      border: BorderDirectional(
-                        bottom: BorderSide(width: 1, color: Colors.grey),
+        child: SingleChildScrollView(
+          child: Column(
+            children: Global.alldata
+                .map(
+                  (e) => GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushNamed(e.navigation);
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.only(left: 25, right: 15),
+                      decoration: const BoxDecoration(
+                        // color: sage,
+                        border: BorderDirectional(
+                          bottom: BorderSide(width: 1, color: Colors.grey),
+                        ),
+                      ),
+                      height: MediaQuery.of(context).size.height / 13.2,
+                      alignment: Alignment.center,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              e.icon,
+                              const SizedBox(
+                                width: 25,
+                              ),
+                              Text(e.lable, style: style.lable)
+                            ],
+                          ),
+                          IconButton(
+                            onPressed: () {
+                              Navigator.of(context).pushNamed(e.navigation);
+                            },
+                            icon: Icon(
+                              Icons.arrow_forward_ios_outlined,
+                              color: sage,
+                            ),
+                          )
+                        ],
                       ),
                     ),
-                    height: MediaQuery.of(context).size.height / 13.2,
-                    alignment: Alignment.center,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            e.icon,
-                            const SizedBox(
-                              width: 25,
-                            ),
-                            Text(e.lable, style: style.lable)
-                          ],
-                        ),
-                        IconButton(
-                          onPressed: () {
-                            Navigator.of(context).pushNamed(e.navigation);
-                          },
-                          icon: Icon(
-                            Icons.arrow_forward_ios_outlined,
-                            color: sage,
-                          ),
-                        )
-                      ],
-                    ),
                   ),
-                ),
-              )
-              .toList(),
+                )
+                .toList(),
+          ),
         ),
       ),
     );

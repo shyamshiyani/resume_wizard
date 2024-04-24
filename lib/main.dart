@@ -7,6 +7,7 @@ import 'package:resume_wizard/screens/education_page.dart';
 import 'package:resume_wizard/screens/experience_page.dart';
 import 'package:resume_wizard/screens/homepage.dart';
 import 'package:resume_wizard/screens/interest_hobbies_page.dart';
+import 'package:resume_wizard/screens/pdfViewer.dart';
 import 'package:resume_wizard/screens/personal_page.dart';
 import 'package:resume_wizard/screens/project__page.dart';
 import 'package:resume_wizard/screens/refrences_page.dart';
@@ -34,6 +35,7 @@ void main() {
         'achievements': (context) => const achievements(),
         'references': (context) => const references(),
         'declaration': (context) => const declaration(),
+        'finalView': (context) => const viewer(),
       },
     ),
   );

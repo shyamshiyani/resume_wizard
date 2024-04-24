@@ -34,103 +34,107 @@ class _technical_skillsState extends State<technical_skills> {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Colors.grey.shade200,
                 ),
                 width: double.infinity,
                 height: MediaQuery.of(context).size.height / 1.27,
                 child: SingleChildScrollView(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Enter Your Skills",
-                        style: style.lable,
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                      ...Global.allskillsdata.map(
-                        (e) => Row(
-                          children: [
-                            Expanded(
-                              child: TextField(
-                                onChanged: (val) {},
-                                controller: e,
-                                decoration: const InputDecoration(
-                                    hintText: "C Programing, Web Technical"),
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.only(top: 20, right: 20, left: 20),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Enter Your Skills",
+                          style: style.lable,
+                        ),
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        ...Global.allskillsdata.map(
+                          (e) => Row(
+                            children: [
+                              Expanded(
+                                child: TextField(
+                                  onChanged: (val) {},
+                                  controller: e,
+                                  decoration: const InputDecoration(
+                                      hintText: "C Programing, Web Technical"),
+                                ),
                               ),
-                            ),
-                            IconButton(
+                              IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    Global.allskillsdata.remove(e);
+                                  });
+                                },
+                                icon: Icon(Icons.delete),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 50),
+                        SizedBox(
+                          height: 50,
+                          width: double.infinity,
+                          child: OutlinedButton(
+                            onPressed: () {
+                              setState(() {
+                                Global.allskillsdata
+                                    .add(TextEditingController());
+                              });
+                            },
+                            child: const Icon(Icons.add),
+                          ),
+                        ),
+                        const SizedBox(height: 50),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            OutlinedButton(
                               onPressed: () {
+                                Global.allskillsdata.forEach((element) {
+                                  element.clear();
+                                });
                                 setState(() {
-                                  Global.allskillsdata.remove(e);
+                                  Global.allskillsdata = [
+                                    TextEditingController(),
+                                    TextEditingController(),
+                                  ];
                                 });
                               },
-                              icon: Icon(Icons.delete),
+                              style: OutlinedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 50, vertical: 14),
+                              ),
+                              child: const Text("clear"),
+                            ),
+                            OutlinedButton(
+                              onPressed: () {
+                                Global.allskillsdata.forEach((element) {
+                                  Global.skills.add(element.text);
+                                });
+                                setState(() {
+                                  Global.allskillsdata = [
+                                    TextEditingController(),
+                                    TextEditingController(),
+                                  ];
+                                });
+                              },
+                              style: OutlinedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 50, vertical: 14),
+                              ),
+                              child: const Text("save"),
                             ),
                           ],
                         ),
-                      ),
-                      const SizedBox(height: 50),
-                      SizedBox(
-                        height: 50,
-                        width: double.infinity,
-                        child: OutlinedButton(
-                          onPressed: () {
-                            setState(() {
-                              Global.allskillsdata.add(TextEditingController());
-                            });
-                          },
-                          child: const Icon(Icons.add),
-                        ),
-                      ),
-                      const SizedBox(height: 50),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          OutlinedButton(
-                            onPressed: () {
-                              Global.allskillsdata.forEach((element) {
-                                element.clear();
-                              });
-                              setState(() {
-                                Global.allskillsdata = [
-                                  TextEditingController(),
-                                  TextEditingController(),
-                                ];
-                              });
-                            },
-                            style: OutlinedButton.styleFrom(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 50, vertical: 14),
-                            ),
-                            child: const Text("clear"),
-                          ),
-                          OutlinedButton(
-                            onPressed: () {
-                              Global.allskillsdata.forEach((element) {
-                                Global.skills.add(element.text);
-                              });
-                              setState(() {
-                                Global.allskillsdata = [
-                                  TextEditingController(),
-                                  TextEditingController(),
-                                ];
-                              });
-                            },
-                            style: OutlinedButton.styleFrom(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 50, vertical: 14),
-                            ),
-                            child: const Text("save"),
-                          ),
-                        ],
-                      )
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
