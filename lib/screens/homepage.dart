@@ -72,9 +72,9 @@ class HomepageState extends State<Homepage> {
                                 ),
                                 gradient: LinearGradient(
                                   colors: [
+                                    parchment,
                                     vanilla,
                                     dutchwhite,
-                                    sage,
                                   ],
                                 ),
                               ),
@@ -93,7 +93,7 @@ class HomepageState extends State<Homepage> {
                                                 const BorderRadius.all(
                                               Radius.circular(10),
                                             ),
-                                            color: dutchwhite),
+                                            color: vanilla),
                                         child: const Icon(
                                           Icons.person,
                                           size: 30,
@@ -103,18 +103,30 @@ class HomepageState extends State<Homepage> {
                                         Text(
                                           Global.resumeData,
                                           style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
+                                            fontWeight: FontWeight.w400,
                                             fontSize: 22,
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 10,
                                         ),
                                         GestureDetector(
                                           onTap: () {
                                             setState(() {});
                                           },
-                                          child: Icon(Icons.delete),
+                                          child: Container(
+                                              height: 50,
+                                              width: 55,
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      const BorderRadius.all(
+                                                    Radius.circular(10),
+                                                  ),
+                                                  color: vanilla),
+                                              child: Icon(
+                                                Icons.delete,
+                                                size: 30,
+                                              )),
                                         )
                                       ],
                                     )
